@@ -1,4 +1,4 @@
-const API_URL = " http://localhost:4000/api/showcase";
+const API_URL = "https://www.imd.org/dev-owpgpt/api/showcase";
 
 window.addEventListener("load", function () {
   fetch(API_URL)
