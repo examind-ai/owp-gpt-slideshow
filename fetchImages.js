@@ -29,13 +29,13 @@ window.addEventListener("load", function () {
       wowSlider.appendChild(imagesList);
 
       jQuery("#wowslider-container1").wowSlider({
-        effect: "basic",
+        effect: "fade",
         prev: "",
         next: "",
         duration: 20 * 100,
         delay: 70 * 100,
-        width: 1024,
-        height: 1024,
+        width: 1280,
+        height: 720,
         autoPlay: true,
         autoPlayVideo: false,
         playPause: false,

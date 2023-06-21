@@ -378,17 +378,16 @@
 	left: 50%;
 }#wowslider-container1 .ws-title{
 	position: absolute;
-	font: 1.8em 'PT Sans', sans-serif;
+	font: 2.3em Nunito, sans-serif;
 	margin-right:10em;
 	z-index: 50;
-	color:#34495E;
+	color:#ffffff;
+	background:#000000;
 	left: 20px;
-	background: none;
 	padding: 10px;
 	bottom: 30px;
 	top: auto;
-	opacity: 1;
-	background-color:#ffffff;
+	opacity: 0.8;
 }
 
 #wowslider-container1 .ws-title div{
