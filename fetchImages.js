@@ -33,7 +33,7 @@ window.addEventListener("load", function () {
         prev: "",
         next: "",
         duration: 20 * 100,
-        delay: 200 * 100,
+        delay: 80 * 100,
         width: 1280,
         height: 720,
         autoPlay: true,
