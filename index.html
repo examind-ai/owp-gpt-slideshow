@@ -3,8 +3,7 @@
   <head>
     <title>IMD OWP Art Showcase</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <script type="text/javascript" src="fetchImages.js"></script>
-
+    
     <!-- Start WOWSlider.com HEAD section -->
     <link rel="stylesheet" type="text/css" href="engine1/style.css" />
     <script type="text/javascript" src="engine1/jquery.js"></script>
@@ -13,7 +12,7 @@
   <body style="background-color: #000000; margin: auto">
     <div class="page_container">
       <img id="imd_logo" src="/imd_logo.svg"/>
-
+      
       <!-- Start WOWSlider.com BODY section -->
       <div id="wowslider-container1">
         <div class="ws_images"></div>
@@ -23,9 +22,19 @@
         <div class="ws_shadow"></div>
       </div>
       <img id="owp_logo" src="/owp_logo.svg"/>
-
+      
     </div>
     <script type="text/javascript" src="engine1/wowslider.js"></script>
     <!-- End WOWSlider.com BODY section -->
+    <script type="text/javascript" src="fetchImages.js?v=1"></script>
+    <script>
+      (function(){
+        // Set URL here in index.html instead of fetchImages.js b/c index.html is not cached by browser
+        const after = "2023-06-15T00:00:00.000%2B02:00"; // %2B02:00 for Switzerland time zone
+        const before = "2023-12-31T00:00:00.000%2B02:00";
+        const url = `https://www.imd.org/dev-owpgpt/api/showcase?after=${after}&before=${before}`;
+        fetchImages(url);
+      })();
+    </script>
   </body>
 </html>

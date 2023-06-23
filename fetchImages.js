@@ -1,9 +1,5 @@
-const after = "2023-06-15T00:00:00.000%2B02:00"; // %2B02:00 for Switzerland time zone
-const before = "2023-12-31T00:00:00.000%2B02:00";
-const API_URL = `https://www.imd.org/dev-owpgpt/api/showcase?after=${after}&before=${before}`;
-
-window.addEventListener("load", function () {
-  fetch(API_URL)
+function fetchImages(url) {
+  fetch(url)
     .then(function (response) {
       if (!response.ok) {
         throw new Error("Network response error");
@@ -59,4 +55,4 @@ window.addEventListener("load", function () {
     .catch(function (error) {
       console.error("Error:", error);
     });
-});
+};
