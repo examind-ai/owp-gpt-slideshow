@@ -3,39 +3,38 @@
   <head>
     <title>IMD OWP Art Showcase</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <style>
-      html, body {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-      }
-  
-      #image-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100%;
-      }
-  
-      #image-container img {
-        max-height: 100%;
-        max-width: 100%;
-        object-fit: contain;
-      }
-    </style>
+    
+    <!-- Start WOWSlider.com HEAD section -->
+    <link rel="stylesheet" type="text/css" href="engine1/style.css" />
+    <script type="text/javascript" src="engine1/jquery.js"></script>
+    <!-- End WOWSlider.com HEAD section -->
   </head>
   <body style="background-color: #000000; margin: auto">
-    <div id="image-container">
-      <img src="/stay_tuned.png" alt="Stay tuned for our first AI-generated art" />
+    <div class="page_container">
+      <img id="imd_logo" src="/imd_logo.svg"/>
+      
+      <!-- Start WOWSlider.com BODY section -->
+      <div id="wowslider-container1">
+        <div class="ws_images"></div>
+        <div class="ws_script" style="position: absolute; left: -99%">
+          <a href="http://wowslider.net">jquery slider</a> by WOWSlider.com v9.0m
+        </div>
+        <div class="ws_shadow"></div>
+      </div>
+      <img id="owp_logo" src="/owp_logo.svg"/>
+      
     </div>
+    <script type="text/javascript" src="engine1/wowslider.js"></script>
+    <!-- End WOWSlider.com BODY section -->
+    <script type="text/javascript" src="fetchImages.js?v=1"></script>
     <script>
-      // When the image is right-clicked, Chrome shows the image context menu which doesn't have a reload option.
-      // We need a way to easily reload through context menu when we want to switch from the 'Stay tuned' page to the slideshow,
-      // so override the context menu and reload the page on right click.
-      document.querySelector("#image-container img").addEventListener("contextmenu", function(event) {
-        event.preventDefault();
-        window.location.reload();
-      });
+      (function(){
+        // Set URL here in index.html instead of fetchImages.js b/c index.html is not cached by browser
+        const after = "2023-06-15T00:00:00.000%2B02:00"; // %2B02:00 for Switzerland time zone
+        const before = "2023-12-31T00:00:00.000%2B02:00";
+        const url = `https://www.imd.org/owpgpt/api/showcase?after=${after}&before=${before}`;
+        fetchImages(url);
+      })();
     </script>
   </body>
 </html>
